@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import withMT from "@material-tailwind/react/utils/withMT"
 
 const config: Config = {
   content: [
@@ -9,6 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: "#76479C",
+        secondary: '#3FC0B4',
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
@@ -16,4 +19,4 @@ const config: Config = {
   },
   plugins: [],
 };
-export default config;
+export default withMT(config);
