@@ -21,9 +21,15 @@ export function MediaMenu() {
               </IconButton>
             </SpeedDialHandler>
             <SpeedDialContent className="rounded-full border border-blue-gray-50 bg-white shadow-xl shadow-black/10">
-              <SpeedDialAction className="bg-blue-gray-50">dfs</SpeedDialAction>
-              <SpeedDialAction className="bg-blue-gray-50">Fds</SpeedDialAction>
-              <SpeedDialAction className="bg-blue-gray-50">fsd</SpeedDialAction>
+              <SpeedDialAction className="bg-blue-gray-50">
+                Insta
+              </SpeedDialAction>
+              <SpeedDialAction className="bg-blue-gray-50">
+                Tiktok
+              </SpeedDialAction>
+              <SpeedDialAction className="bg-blue-gray-50">
+                Linkedin
+              </SpeedDialAction>
             </SpeedDialContent>
           </SpeedDial>
         </div>
