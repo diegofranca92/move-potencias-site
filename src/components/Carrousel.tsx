@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import { Carousel } from "@material-tailwind/react";
- 
+
 export function Carrousel() {
   return (
     <Carousel
@@ -39,7 +39,6 @@ export function Carrousel() {
         alt="image 1"
         className="h-full w-full object-cover"
       />
-     
     </Carousel>
   );
 }

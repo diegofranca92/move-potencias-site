@@ -1,21 +1,20 @@
-"use client";
-import React from "react";
+'use client';
 import {
-  Navbar,
-  MobileNav,
-  Typography,
   Button,
+  Collapse,
   IconButton,
-  Card,
-} from "@material-tailwind/react";
+  Navbar,
+  Typography,
+} from '@material-tailwind/react';
+import React from 'react';
 
 export function NavBar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
     window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
+      'resize',
+      () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
 
@@ -113,7 +112,7 @@ export function NavBar() {
           </IconButton>
         </div>
       </div>
-      <MobileNav open={openNav}>
+      <Collapse open={openNav}>
         {navList}
         <div className="flex items-center gap-x-1">
           <Button fullWidth variant="text" size="sm" className="">
@@ -123,7 +122,7 @@ export function NavBar() {
             <span>Sign in</span>
           </Button>
         </div>
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 }

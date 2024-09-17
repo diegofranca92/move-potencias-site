@@ -1,8 +1,8 @@
-"use client";
-import { Carrousel } from "@/components/Carrousel";
-import { NavBar } from "@/components/Navbar";
-import { MoveTimeline } from "@/components/Timeline";
-import { Card, Typography } from "@material-tailwind/react";
+'use client';
+import { Carrousel } from '@/components/Carrousel';
+import { NavBar } from '@/components/Navbar';
+import { MoveTimeline } from '@/components/Timeline';
+import { Card, Typography } from '@material-tailwind/react';
 
 export default function Home() {
   return (
@@ -12,11 +12,7 @@ export default function Home() {
         <Carrousel />
         <div className="mx-auto max-w-screen-md py-12">
           <Card className="mb-12 overflow-hidden">
-            <img
-              alt="nature"
-              className="w-full"
-              src="/assets/logo.png"
-            />
+            <img alt="nature" className="w-full" src="/assets/logo.png" />
           </Card>
           <Typography variant="h2" color="blue-gray" className="mb-2">
             Noiz

@@ -1,4 +1,4 @@
-'use client'
-import { Card, Typography } from "@material-tailwind/react";
+'use client';
+import { Card, Typography } from '@material-tailwind/react';
 
-export { Card, Typography }
+export { Card, Typography };
