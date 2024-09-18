@@ -13,12 +13,9 @@ export function MediaMenu() {
         <div className="absolute bottom-0 right-0">
           <SpeedDial>
             <SpeedDialHandler>
-              <IconButton
-                size="lg"
-                className="rounded-full bg-secondary border border-blue-gray-50 shadow-xl animate-bounce"
-              >
+              <IconButton className="rounded-full bg-secondary border border-blue-gray-50 shadow-xl max-w-[70px] w-[70px] h-[70px] max-h-[70px] animate-bounce">
                 <svg
-                  className="w-7 h-7"
+                  className="w-9 h-9"
                   fill="currentColor"
                   viewBox="0 0 16 16"
                 >
