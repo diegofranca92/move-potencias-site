@@ -15,6 +15,16 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        bounce: 'bounce 4s infinite',
+        'pulse-color': 'pulseColor 8s ease-in-out infinite',
+      },
+      keyframes: {
+        pulseColor: {
+          '0%, 100%': { backgroundColor: '#76479C' }, // Cor inicial e final (roxo escuro)
+          '50%': { backgroundColor: '#3FC0B4' }, // Cor intermediária (roxo claro)
+        },
+      },
     },
   },
   plugins: [],

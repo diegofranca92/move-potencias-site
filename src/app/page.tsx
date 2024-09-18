@@ -1,5 +1,6 @@
 'use client';
 import { Carrousel } from '@/components/Carrousel';
+import DataCircles from '@/components/DataCircles';
 import { MoveAccordion } from '@/components/MoveAccordion';
 import { MoveTimeline } from '@/components/Timeline';
 import { Card, Typography } from '@material-tailwind/react';
@@ -9,6 +10,7 @@ export default function Home() {
     <div className="items-center justify-items-center min-h-screen">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Carrousel />
+        <DataCircles />
         <div className="mx-auto max-w-screen-md py-12">
           <Card className="mb-12 overflow-hidden">
             <img alt="nature" className="w-full" src="/assets/logo.png" />
