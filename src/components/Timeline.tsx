@@ -45,6 +45,7 @@ export function MoveTimeline() {
           </TimelineHeader>
         </TimelineItem>
         <TimelineItem className="h-28">
+          <TimelineConnector className="!w-[78px]" />
           <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
             <TimelineIcon className="p-3" variant="ghost" color="green">
               2022
@@ -60,6 +61,7 @@ export function MoveTimeline() {
           </TimelineHeader>
         </TimelineItem>
         <TimelineItem className="h-28">
+          <TimelineConnector className="!w-[78px]" />
           <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
             <TimelineIcon className="p-3" variant="ghost" color="green">
               2021
@@ -75,6 +77,7 @@ export function MoveTimeline() {
           </TimelineHeader>
         </TimelineItem>
         <TimelineItem className="h-28">
+          <TimelineConnector className="!w-[78px]" />
           <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
             <TimelineIcon className="p-3" variant="ghost" color="green">
               2020

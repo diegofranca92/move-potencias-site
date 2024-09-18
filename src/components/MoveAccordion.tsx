@@ -16,11 +16,11 @@ export function MoveAccordion() {
     <>
       <Accordion
         open={open === 1}
-        className="mb-2 mt-8 rounded-lg border border-blue-gray-100 px-4"
+        className="mb-2 mt-8 rounded-lg border border-blue-gray-100 px-4 sticky top-16"
       >
         <AccordionHeader
           onClick={() => handleOpen(1)}
-          className={`border-b-0 transition-colors ${
+          className={`border-b-0 transition-colors bg-white ${
             open === 1 ? 'text-blue-500 hover:!text-blue-700' : ''
           }`}
         >
@@ -35,7 +35,7 @@ export function MoveAccordion() {
       </Accordion>
       <Accordion
         open={open === 2}
-        className="mb-2 rounded-lg border border-blue-gray-100 px-4"
+        className="mb-2 rounded-lg border border-blue-gray-100 px-4 sticky top-16"
       >
         <AccordionHeader
           onClick={() => handleOpen(2)}
@@ -55,12 +55,12 @@ export function MoveAccordion() {
       </Accordion>
       <Accordion
         open={open === 3}
-        className="rounded-lg border border-blue-gray-100 px-4"
+        className="rounded-lg border border-blue-gray-100 px-4 sticky top-16"
       >
         <AccordionHeader
           onClick={() => handleOpen(3)}
           className={`border-b-0 transition-colors ${
-            open === 3 ? 'text-blue-500 hover:!text-blue-700' : ''
+            open === 3 ? 'text-primary hover:!text-primary' : ''
           }`}
         >
           Principais Atividades:
