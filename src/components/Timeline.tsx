@@ -8,7 +8,6 @@ import {
   Typography,
 } from '@material-tailwind/react';
 import Link from 'next/link';
-import { useState } from 'react';
 
 type TimelineEvent = {
   year: string;
