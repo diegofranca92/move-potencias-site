@@ -7,6 +7,8 @@ import {
   TimelineItem,
   Typography,
 } from '@material-tailwind/react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 type TimelineEvent = {
   year: string;
@@ -76,19 +78,23 @@ const timelineData: TimelineEvent[] = [
   },
   {
     year: "2024",
-    title: "Consolidação",
+    title: "Ampliação de Equipe e Expansão",
     description:
-      "Impacto estimado: +2.000 participantes atendidos, 2 livros artesanais, 2 minidocumentários, 6 saraus principais. Foco: Fortalecer redes e criar novos produtos culturais.",
-    color: "teal",
+      "Em 2024, tivemos a ampliação de equipe com a criação de um novo núcleo em São Francisco do Conde, BA. Além disso, já realizamos diversas oficinas.",
+    color: "deep-orange",
     date: "",
   },
 ];
 
-export function MoveTimeline() {
+interface MoveTimelineOptions {
+  showAll?: boolean
+}
+
+export function MoveTimeline({showAll}: MoveTimelineOptions) {
   return (
     <div className="w-[25rem] mx-auto">
       <Timeline>
-        {timelineData.map((event, index) => (
+        {timelineData.slice(0, showAll ? timelineData.length : 3).map((event, index) => (
           <TimelineItem key={event.year} className="h-28 group">
             {index < timelineData.length - 1 && (
               <TimelineConnector className="!w-[78px]" />
@@ -116,6 +122,14 @@ export function MoveTimeline() {
           </TimelineItem>
         ))}
       </Timeline>
+      {!showAll && (
+        <Link
+          className="mt-4 text-blue-600"
+          href={'/trajetoria'}
+        >
+          Ver Mais
+        </Link>
+      )}
     </div>
   );
 }
