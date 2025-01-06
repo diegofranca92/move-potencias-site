@@ -8,90 +8,108 @@ import {
   Typography,
 } from '@material-tailwind/react';
 
+type TimelineEvent = {
+  year: string;
+  title: string;
+  description: string;
+  color: "blue-gray" | "gray" | "brown" | "deep-orange" | "orange" | "amber" | "yellow" | "lime" | "light-green" | "green" | "teal" | "cyan" | "light-blue" | "blue" | "indigo" | "deep-purple" | "purple" | "pink" | "red";
+  date?: string;
+};
+
+
+const timelineData:TimelineEvent[] = [
+  {
+    year: "2011",
+    title: "Fundação",
+    description:
+      "Fundado por Evanilson Alves dos Santos e outros artistas de Sussuarana, Salvador. Objetivo: Utilizar a poesia e outras expressões artísticas para transformar narrativas das periferias.",
+    color: "blue",
+    date: "",
+  },
+  {
+    year: "2015",
+    title: "Reconhecimento Internacional",
+    description:
+      "Participação no 29º Salão do Livro e da Imprensa de Genebra, Suíça. Impacto: Poesia periférica representada no cenário internacional.",
+    color: "red",
+    date: "",
+  },
+  {
+    year: "2016",
+    title: "Protagonismo em Campeonatos",
+    description:
+      "Participação no Campeonato Brasileiro de Poesia Falada. Finalista solo (2016) e vice-campeão em dupla (2018).",
+    color: "green",
+    date: "",
+  },
+  {
+    year: "2019",
+    title: "Escola Politizada: Poesia de Quebrada",
+    description:
+      "Oficinas criativas e saraus em escolas públicas. Impacto: Fortalecimento da autoestima e identidade cultural de jovens.",
+    color: "blue",
+    date: "",
+  },
+  {
+    year: "2020",
+    title: "Ampliação das Parcerias",
+    description:
+      "Novas instituições atendidas e envolvimento de adolescentes em situação de vulnerabilidade. Produções premiadas.",
+    color: "yellow",
+    date: "",
+  },
+  {
+    year: "2022",
+    title: "Produção Artística",
+    description:
+      "Produções culturais: minidocumentário, livro artesanal, poemas em lambes por postes e praças, fortalecendo a conexão cultural.",
+    color: "purple",
+    date: "",
+  },
+  {
+    year: "2023",
+    title: "Expansão das Atividades",
+    description:
+      "Novas oficinas alcançando +300 participantes em Salvador. Ampliação de redes com coletivos artísticos e maior visibilidade digital.",
+    color: "cyan",
+    date: "",
+  },
+  {
+    year: "2024",
+    title: "Consolidação",
+    description:
+      "Impacto estimado: +2.000 participantes atendidos, 2 livros artesanais, 2 minidocumentários, 6 saraus principais. Foco: Fortalecer redes e criar novos produtos culturais.",
+    color: "teal",
+    date: "",
+  },
+];
+
 export function MoveTimeline() {
   return (
     <div className="w-[25rem] mx-auto">
       <Timeline>
-        <TimelineItem className="h-28">
-          <TimelineConnector className="!w-[78px]" />
-          <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
-            <TimelineIcon className="p-3" variant="ghost">
-              2024
-            </TimelineIcon>
-            <div className="flex flex-col gap-1">
-              <Typography variant="h6" color="blue-gray">
-                $2400, Design changes
-              </Typography>
-              <Typography variant="small" color="gray" className="font-normal">
-                22 DEC 7:20 PM
-              </Typography>
-            </div>
-          </TimelineHeader>
-        </TimelineItem>
-        <TimelineItem className="h-28">
-          <TimelineConnector className="!w-[78px]" />
-          <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
-            <TimelineIcon className="p-3" variant="ghost" color="red">
-              2023
-            </TimelineIcon>
-            <div className="flex flex-col gap-1">
-              <Typography variant="h6" color="blue-gray">
-                New order #1832412
-              </Typography>
-              <Typography variant="small" color="gray" className="font-normal">
-                21 DEC 11 PM
-              </Typography>
-            </div>
-          </TimelineHeader>
-        </TimelineItem>
-        <TimelineItem className="h-28">
-          <TimelineConnector className="!w-[78px]" />
-          <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
-            <TimelineIcon className="p-3" variant="ghost" color="green">
-              2022
-            </TimelineIcon>
-            <div className="flex flex-col gap-1">
-              <Typography variant="h6" color="blue-gray">
-                Payment completed for order #4395133
-              </Typography>
-              <Typography variant="small" color="gray" className="font-normal">
-                20 DEC 2:20 AM
-              </Typography>
-            </div>
-          </TimelineHeader>
-        </TimelineItem>
-        <TimelineItem className="h-28">
-          <TimelineConnector className="!w-[78px]" />
-          <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
-            <TimelineIcon className="p-3" variant="ghost" color="green">
-              2021
-            </TimelineIcon>
-            <div className="flex flex-col gap-1">
-              <Typography variant="h6" color="blue-gray">
-                Payment completed for order #4395133
-              </Typography>
-              <Typography variant="small" color="gray" className="font-normal">
-                20 DEC 2:20 AM
-              </Typography>
-            </div>
-          </TimelineHeader>
-        </TimelineItem>
-        <TimelineItem className="h-28">
-          <TimelineConnector className="!w-[78px]" />
-          <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
-            <TimelineIcon className="p-3" variant="ghost" color="green">
-              2020
-            </TimelineIcon>
-            <div className="flex flex-col gap-1">
-              <Typography variant="h6" color="blue-gray">
-                Payment completed for order #4395133
-              </Typography>
-              <Typography variant="small" color="gray" className="font-normal">
-                20 DEC 2:20 AM
-              </Typography>
-            </div>
-          </TimelineHeader>
-        </TimelineItem>
+        {timelineData.map((item, index) => (
+          <TimelineItem className="h-28" key={index}>
+            <TimelineConnector className="!w-[78px]" />
+            <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
+              <TimelineIcon className="p-3" variant="ghost" color={item.color}>
+                {item.year}
+              </TimelineIcon>
+              <div className="flex flex-col gap-1">
+                <Typography variant="h6" color="blue-gray">
+                  {item.title}
+                </Typography>
+                <Typography
+                  variant="small"
+                  color="gray"
+                  className="font-normal"
+                >
+                  {item.description}
+                </Typography>
+              </div>
+            </TimelineHeader>
+          </TimelineItem>
+        ))}
       </Timeline>
     </div>
   );
