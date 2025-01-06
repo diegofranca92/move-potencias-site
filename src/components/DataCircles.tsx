@@ -1,28 +1,27 @@
 const DataCircles = () => {
   const data = [
-    { value: "480", description: "JOVENS E PROFESSORES CAPACITADOS EM OFICINAS DE ESCRITA CRIATIVA" },
-    { value: "240", description: "JOVENS CAPACITADOS EM OFICINAS DE AUDIOVISUAL E MÍDIA" },
+    { value: "+960", description: "Jovens e professores capacitados em oficinas de escrita criativa" },
+    { value: "240", description: "Jovens capacitados em oficinas de audiovisual e mídia" },
     { 
-      value: "320", 
-      description: "MULHERES PARTICIPANTES, SENDO 80 JOVENS EMPREENDEDORAS FORMADAS EM OFICINAS DE ESCRITA POÉTICA E PRODUÇÃO ARTESANAL" 
+      value: "+320", 
+      description: "Mulheres participantes, sendo 80 jovens empreendedoras formadas em oficinas de escrita poética e produção artesanal" 
     },
     { 
       value: "87.6%", 
-      description: "DOS PARTICIPANTES SE AUTODECLARAM NEGROS OU PARDOS, FORTALECENDO A REPRESENTATIVIDADE DA PERIFERIA SOTEROPOLITANA" 
+      description: "Dos participantes se autodeclaram negros ou pardos, fortalecendo a representatividade da periferia soteropolitana" 
     },
     { 
       value: "90%", 
-      description: "DOS JOVENS CONTINUAM ENGAJADOS EM COLETIVOS OU AÇÕES ARTÍSTICAS APÓS AS OFICINAS" 
+      description: "Dos jovens continuam engajados em coletivos ou ações artísticas após as oficinas" 
     },
-    { value: "2", description: "MINIDOCUMENTÁRIOS PRODUZIDOS POR JOVENS DA PERIFERIA" },
-    { value: "+2.000", description: "JOVENS, EDUCADORES E ARTISTAS DIRETAMENTE IMPACTADOS ENTRE 2011 E 2024" },
+    { value: "+4.000", description: "Jovens, educadores e artistas diretamente impactados entre 2011 e 2024" },
   ];
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-8 px-10">
+    <div className="flex flex-wrap justify-center items-center gap-8 px-10 md:max-w-7xl mx-auto">
       {data.map((item, index) => (
         <div key={index} className="circle hover:scale-110 mt-8 mb-8">
-          <h2>{item.value}</h2>
+          <h2 className="font-bold text-3xl">{item.value}</h2>
           <p>{item.description}</p>
         </div>
       ))}

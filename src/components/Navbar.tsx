@@ -61,7 +61,7 @@ export function NavBar() {
 
   return (
     <Navbar className="sticky top-0 z-10 h-max max-w-full px-4 py-2 lg:px-8 lg:py-4 rounded-none backdrop-blur-3xl bg-primary border-none">
-      <div className="flex items-center justify-between text-blue-gray-900">
+      <div className="flex items-center justify-between text-blue-gray-900 md:max-w-7xl mx-auto">
         <h1 className="border-b-2 border-secondary text-center">
           Move Potências da Quebrada
         </h1>
