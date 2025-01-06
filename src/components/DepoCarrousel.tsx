@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, IconButton } from "@material-tailwind/react";
+import { Carousel } from "@material-tailwind/react";
 
 type Video = {
   link: string;

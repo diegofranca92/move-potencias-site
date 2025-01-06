@@ -6,18 +6,18 @@ export default function Depoimentos() {
   const videoList = [
     {
       link: 'https://youtube.com/shorts/kNxueOAshfI?feature=share',
-      title: 'Short 1',
-      description: 'Descrição breve do primeiro vídeo.',
+      title: '',
+      description: '',
     },
     {
       link: 'https://youtube.com/shorts/6nk31wloWM0?feature=share',
-      title: 'Short 2',
-      description: 'Descrição breve do segundo vídeo.',
+      title: '',
+      description: '',
     },
     {
       link: 'https://youtube.com/shorts/4EkanZRqqDg',
-      title: 'Short 3',
-      description: 'Descrição breve do terceiro vídeo.',
+      title: '',
+      description: '',
     },
   ];
 
