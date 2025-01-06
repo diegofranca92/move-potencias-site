@@ -2,6 +2,23 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+
+<!-- 
+
+Artes em PDF e e Ai
+https://drive.google.com/drive/folders/10h9G--uoD1eYXjVikCtExnqHU8QLG-LM
+
+
+Fotos Colegio Salvador Ray
+https://drive.google.com/drive/folders/1es9QvJvqkGC7H_0vVPAWHDRVnMsx46dA
+
+Depoimentos e videos curtos:
+
+https://drive.google.com/drive/folders/1-KITB-PypFAeFD38m50gqykiC9GpnLgU
+
+ -->
+
+
 First, run the development server:
 
 ```bash

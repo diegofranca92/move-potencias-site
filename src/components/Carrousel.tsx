@@ -21,22 +21,22 @@ export function Carrousel() {
       <img
         src="/assets/capa1.jpg"
         alt="image 1"
-        className="h-[28rem] w-full object-cover"
+        className="h-[40rem] w-full object-cover"
       />
       <img
         src="/assets/capa2.jpg"
         alt="image 1"
-        className="h-[28rem] w-full object-cover"
+        className="h-[40rem] w-full object-cover"
       />
       <img
         src="/assets/capa3.jpg"
         alt="image 1"
-        className="h-[28rem] w-full object-cover"
+        className="h-[40rem] w-full object-cover"
       />
       <img
         src="/assets/capa4.jpg"
         alt="image 1"
-        className="h-[28rem] w-full object-cover"
+        className="h-[40rem] w-full object-cover"
       />
     </Carousel>
   );

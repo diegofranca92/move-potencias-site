@@ -16,7 +16,7 @@ export function MoveAccordion() {
     <>
       <Accordion
         open={open === 1}
-        className="mb-2 mt-8 rounded-lg border border-blue-gray-100 px-4 sticky top-16"
+        className="mb-2 mt-8 rounded-lg border bg-white border-blue-gray-100 px-4 sticky top-16"
       >
         <AccordionHeader
           onClick={() => handleOpen(1)}
@@ -59,7 +59,7 @@ export function MoveAccordion() {
       >
         <AccordionHeader
           onClick={() => handleOpen(3)}
-          className={`border-b-0 transition-colors ${
+          className={`border-b-0 transition-colors bg-white ${
             open === 3 ? 'text-primary hover:!text-primary' : ''
           }`}
         >
@@ -71,8 +71,7 @@ export function MoveAccordion() {
             <ListItem> Cursos de empreendedorismo</ListItem>
             <ListItem>Cursos de áudio visual</ListItem>
             <ListItem>Cursos de teatro</ListItem>
-            <ListItem>Cursos de áudio visual</ListItem>
-            <ListItem>Cursos de áudio visual</ListItem>
+            <ListItem>Cursos de tecnologia</ListItem>
           </List>
         </AccordionBody>
       </Accordion>

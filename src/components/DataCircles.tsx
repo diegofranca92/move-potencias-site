@@ -1,37 +1,30 @@
 const DataCircles = () => {
+  const data = [
+    { value: "+960", description: "Jovens e professores capacitados em oficinas de escrita criativa" },
+    { value: "240", description: "Jovens capacitados em oficinas de audiovisual e mídia" },
+    { 
+      value: "+320", 
+      description: "Mulheres participantes, sendo 80 jovens empreendedoras formadas em oficinas de escrita poética e produção artesanal" 
+    },
+    { 
+      value: "87.6%", 
+      description: "Dos participantes se autodeclaram negros ou pardos, fortalecendo a representatividade da periferia soteropolitana" 
+    },
+    { 
+      value: "90%", 
+      description: "Dos jovens continuam engajados em coletivos ou ações artísticas após as oficinas" 
+    },
+    { value: "+4.000", description: "Jovens, educadores e artistas diretamente impactados entre 2011 e 2024" },
+  ];
+
   return (
-    <div className="flex flex-wrap justify-center items-center gap-8 p-10">
-      <div className="circle hover:scale-110 mt-16">
-        <h2>134</h2>
-        <p>MULHERES CAPACITADAS EM FRONT-END (REACT) - NÍVEL JÚNIOR</p>
-      </div>
-      <div className="circle animate-bounce hover:scale-110 mb-16">
-        <h2>31</h2>
-        <p>MULHERES CAPACITADAS NO CURSO DE NÍVEL AVANÇADO EM JAVASCRIPT</p>
-      </div>
-      <div className="circle animate-pulse-color hover:scale-110">
-        <h2>299</h2>
-        <p>MULHERES PRETAS E PARDAS</p>
-      </div>
-      <div className="circle hover:scale-110 mb-16">
-        <h2>86%</h2>
-        <p>
-          DAS FORMANDAS CONTINUAM ESTUDANDO E INVESTINDO NA CARREIRA NA ÁREA DE
-          PROGRAMAÇÃO
-        </p>
-      </div>
-      <div className="circle hover:scale-110">
-        <h2>252</h2>
-        <p>MULHERES CAPACITADAS EM BACK-END (NODE.JS) - NÍVEL JÚNIOR</p>
-      </div>
-      <div className="circle hover:scale-110">
-        <h2>42</h2>
-        <p>MULHERES TRANS OU TRAVESTIS FORMADAS</p>
-      </div>
-      <div className="circle hover:scale-95 scale-90 mb-28">
-        <h2>192</h2>
-        <p>MULHERES DO NORDESTE DO BRASIL</p>
-      </div>
+    <div className="flex flex-wrap justify-center items-center gap-8 px-10 md:max-w-7xl mx-auto">
+      {data.map((item, index) => (
+        <div key={index} className="circle hover:scale-110 mt-8 mb-8">
+          <h2 className="font-bold text-3xl">{item.value}</h2>
+          <p>{item.description}</p>
+        </div>
+      ))}
     </div>
   );
 };

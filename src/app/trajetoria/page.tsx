@@ -20,7 +20,7 @@ export default function Home() {
             rodas de conversa, consultorias, ações sociais e eventos diversos.
           </Typography>
         </div>
-        <MoveTimeline />
+        <MoveTimeline showAll />
       </main>
     </div>
   );
