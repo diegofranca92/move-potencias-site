@@ -19,7 +19,7 @@ const DataCircles = () => {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-8 p-10">
+    <div className="flex flex-wrap justify-center items-center gap-8 px-10">
       {data.map((item, index) => (
         <div key={index} className="circle hover:scale-110 mt-8 mb-8">
           <h2>{item.value}</h2>
