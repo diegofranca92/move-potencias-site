@@ -17,7 +17,7 @@ type TimelineEvent = {
 };
 
 
-const timelineData:TimelineEvent[] = [
+const timelineData: TimelineEvent[] = [
   {
     year: "2011",
     title: "Fundação",
@@ -88,23 +88,28 @@ export function MoveTimeline() {
   return (
     <div className="w-[25rem] mx-auto">
       <Timeline>
-        {timelineData.map((item, index) => (
-          <TimelineItem className="h-28" key={index}>
-            <TimelineConnector className="!w-[78px]" />
+        {timelineData.map((event, index) => (
+          <TimelineItem key={event.year} className="h-28 group">
+            {index < timelineData.length - 1 && (
+              <TimelineConnector className="!w-[78px]" />
+            )}
+            
             <TimelineHeader className="relative rounded-xl border border-blue-gray-50 bg-white py-3 pl-4 pr-8 shadow-lg shadow-blue-gray-900/5">
-              <TimelineIcon className="p-3" variant="ghost" color={item.color}>
-                {item.year}
+              <TimelineIcon className="p-3" variant="ghost" color={event.color}>
+                {event.year}
               </TimelineIcon>
               <div className="flex flex-col gap-1">
                 <Typography variant="h6" color="blue-gray">
-                  {item.title}
+                  {event.title}
                 </Typography>
-                <Typography
-                  variant="small"
-                  color="gray"
-                  className="font-normal"
-                >
-                  {item.description}
+                <Typography variant="small" color="gray" className="font-normal">
+                  {event.date}
+                </Typography>
+              </div>
+              {/* Descrição oculta até o hover e aparece à direita */}
+              <div className="absolute top-1/2 right-full transform -translate-y-1/2 w-64 p-4 bg-gray-100 rounded-md opacity-0 group-hover:opacity-100 group-hover:w-72 group-hover:block transition-all duration-300">
+                <Typography variant="small" color="gray">
+                  {event.description}
                 </Typography>
               </div>
             </TimelineHeader>
