@@ -17,7 +17,7 @@ const formatYouTubeLink = (link: string) => {
 };
 
 const DepoCarrousel: React.FC<YouTubeShortsCarouselProps> = ({ videos }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex] = useState(1);
 
   return (
     <div className="relative w-full max-w-sm mx-auto mb-28">
