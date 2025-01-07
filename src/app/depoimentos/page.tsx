@@ -32,10 +32,12 @@ export default function Depoimentos() {
             Depoimentos
           </Typography>
           <Typography color="gray" className="font-normal">
-            O Move Potências da Quebrada é um empreendimento social dedicado a
-            qualificar e despertar habilidades por meio de cursos livres de
-            escrita criativa de poesia, empreendedorismo, áudio visual, teatro,
-            rodas de conversa, consultorias, ações sociais e eventos diversos.
+            Os relatos que você encontrará aqui refletem as transformações que o
+            *Move Potências da Quebrada* promove. Por meio de cursos, rodas de
+            conversa, oficinas criativas e ações sociais, despertamos talentos,
+            fortalecemos identidades e inspiramos mudanças. Confira como nossas
+            iniciativas impactaram vidas e ajudaram a revelar o potencial de
+            cada participante.
           </Typography>
         </div>
         <DepoCarrousel videos={videoList} />
