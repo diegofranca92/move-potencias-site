@@ -5,18 +5,27 @@ import { Card, Typography } from '@material-tailwind/react';
 export default function Depoimentos() {
   const videoList = [
     {
+      link: 'https://youtube.com/shorts/p3uDqW34NRg',
+      title: 'Joane Macieira',
+      description: '',
+    },    {
       link: 'https://youtube.com/shorts/kNxueOAshfI?feature=share',
-      title: '',
+      title: 'Ana Carolina',
+      description: '',
+    },
+    {
+      link: 'https://youtube.com/shorts/SVZRrCYRuIc',
+      title: 'Estudante EJA Martinho Salles - SFC',
       description: '',
     },
     {
       link: 'https://youtube.com/shorts/6nk31wloWM0?feature=share',
-      title: '',
+      title: 'Estudante Martinho Salles - SFC',
       description: '',
     },
     {
       link: 'https://youtube.com/shorts/4EkanZRqqDg',
-      title: '',
+      title: 'Estudante Martinho Salles - SFC',
       description: '',
     },
   ];
