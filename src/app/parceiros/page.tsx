@@ -2,7 +2,7 @@
 import { MoveTimeline } from '@/components/Timeline';
 import { Card, Typography } from '@material-tailwind/react';
 
-export default function Home() {
+export default function Parceiros() {
   return (
     <div className="items-center justify-items-center min-h-screen">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">

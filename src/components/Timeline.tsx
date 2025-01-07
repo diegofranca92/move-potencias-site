@@ -38,30 +38,6 @@ type TimelineEvent = {
 
 const timelineData: TimelineEvent[] = [
   {
-    year: '2011',
-    title: 'Fundação',
-    description:
-      'Fundado por Evanilson Alves dos Santos e outros artistas de Sussuarana, Salvador. Objetivo: Utilizar a poesia e outras expressões artísticas para transformar narrativas das periferias.',
-    color: 'blue',
-    date: '',
-  },
-  {
-    year: '2015',
-    title: 'Reconhecimento Internacional',
-    description:
-      'Participação no 29º Salão do Livro e da Imprensa de Genebra, Suíça. Impacto: Poesia periférica representada no cenário internacional.',
-    color: 'red',
-    date: '',
-  },
-  {
-    year: '2016',
-    title: 'Protagonismo em Campeonatos',
-    description:
-      'Participação no Campeonato Brasileiro de Poesia Falada. Finalista solo (2016) e vice-campeão em dupla (2018).',
-    color: 'green',
-    date: '',
-  },
-  {
     year: '2019',
     title: 'Escola Politizada: Poesia de Quebrada',
     description:
@@ -78,14 +54,6 @@ const timelineData: TimelineEvent[] = [
     date: '',
   },
   {
-    year: '2022',
-    title: 'Produção Artística',
-    description:
-      'Produções culturais: minidocumentário, livro artesanal, poemas em lambes por postes e praças, fortalecendo a conexão cultural.',
-    color: 'purple',
-    date: '',
-  },
-  {
     year: '2023',
     title: 'Expansão das Atividades',
     description:
@@ -95,9 +63,9 @@ const timelineData: TimelineEvent[] = [
   },
   {
     year: '2024',
-    title: 'Ampliação de Equipe e Expansão',
+    title: 'Criação de Nucleo São Francisco do Conde',
     description:
-      'Em 2024, tivemos a ampliação de equipe com a criação de um novo núcleo em São Francisco do Conde, BA. Além disso, já realizamos diversas oficinas.',
+      'Em 2024, tivemos a ampliação de equipe com a criação de um novo núcleo em São Francisco do Conde, BA, Tendo como responsável A produtora cultural Raiani Alcides e Diego França.',
     color: 'deep-orange',
     date: '',
   },

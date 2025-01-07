@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 
 export function NavBar() {
   const [openNav, setOpenNav] = useState(false);
-  const [isContactVisible, setIsContactVisible] = useState(false); // Controla a visibilidade do contatinho
+  const [isContactVisible, setIsContactVisible] = useState(false);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -22,6 +22,7 @@ export function NavBar() {
   // Definir os itens de navegação dinamicamente
   const navItems = [
     { label: 'Inicio', link: '/' },
+    { label: 'Equipe', link: '/equipe' },
     { label: 'Depoimentos', link: '/depoimentos' },
     { label: 'Trajetória', link: '/trajetoria' },
     {
