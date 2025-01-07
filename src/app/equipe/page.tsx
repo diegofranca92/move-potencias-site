@@ -1,9 +1,9 @@
 'use client';
+import { useState } from 'react';
 import { Button, Card, Typography } from '@material-tailwind/react';
 import Image from 'next/image';
 
 export default function Equipe() {
-  // Dados fictícios dos membros da equipe
   const membros = [
     {
       nome: 'Evanilson Alves',
@@ -16,14 +16,14 @@ export default function Equipe() {
       nome: 'Raiani Alcides',
       cargo: 'Poetisa e Fotógrafa',
       descricao:
-        'Raiani Alcides é poetisa, fotógrafa, mobilizadora cultural, mobilizadora de juventude e professora de tecnologia. Com um olhar sensível e artístico, ela se dedica a capturar e expressar as histórias e vivências das comunidades que retrata. Seu trabalho é marcado pela busca de autenticidade e pela valorização das narrativas periféricas, sempre com um enfoque social e transformador. Além de sua atuação como artista, Raiani é uma facilitadora de processos culturais e de empoderamento juvenil, focando especialmente em meninas pretas, com o objetivo de quebrar paradigmas e abrir espaços para essas jovens no ambiente da tecnologia. Como professora de tecnologia, ela se dedica a formar e capacitar essas meninas, conectando-as à sua própria identidade e ao potencial criativo, enquanto as prepara para o futuro, unindo arte e inovação.',
+        'Raiani Alcides é poetisa, fotógrafa, mobilizadora cultural, mobilizadora de juventude e professora de tecnologia. Com um olhar sensível e artístico, ela se dedica a capturar e expressar as histórias e vivências das comunidades que retrata. Seu trabalho é marcado pela busca de autenticidade e pela valorização das narrativas periféricas, sempre com um enfoque social e transformador.',
       imagem: '/assets/ray.jpg',
     },
     {
       nome: 'Lorena Lais',
       cargo: 'Filmaker',
       descricao:
-        'Lorena é social media e filmaker no Instagram do projeto Move Potências. Com experiência em fotografia, filmagem com dispositivos móveis e edição de vídeo, ela se especializa na produção de conteúdo audiovisual para eventos culturais e literários. Sua paixão é capturar momentos autênticos, compartilhando vídeos e coberturas ao vivo nos stories para criar uma experiência envolvente. Seu trabalho foca em fortalecer a presença digital do projeto e engajar a audiência, destacando o valor cultural de cada evento registrado.',
+        'Lorena é social media e filmaker no Instagram do projeto Move Potências. Com experiência em fotografia, filmagem com dispositivos móveis e edição de vídeo, ela se especializa na produção de conteúdo audiovisual para eventos culturais e literários. Sua paixão é capturar momentos autênticos, compartilhando vídeos e coberturas ao vivo nos stories para criar uma experiência envolvente.',
       imagem: '/assets/lorena.jpg',
     },
     {
@@ -37,10 +37,17 @@ export default function Equipe() {
       nome: 'Diego França',
       cargo: 'Consultor de TI e Produtor cultural',
       descricao:
-        'Diego França é consultor de TI e produtor cultural, unindo seu conhecimento técnico à paixão pela cultura. Com uma abordagem inovadora, ele aplica sua expertise em tecnologia para impulsionar projetos culturais e sociais, criando soluções eficientes e impactantes. Diego se dedica a fortalecer a cena cultural, utilizando sua visão estratégica e habilidades em TI para transformar ideias em realidade, sempre com foco no desenvolvimento e na conectividade das iniciativas culturais.',
+        'Diego França é consultor de TI e produtor cultural, unindo seu conhecimento técnico à paixão pela cultura. Com uma abordagem inovadora, ele aplica sua expertise em tecnologia para impulsionar projetos culturais e sociais, criando soluções eficientes e impactantes.',
       imagem: '/assets/diego.jpg',
     },
   ];
+
+  // Estado para controlar os textos expandidos
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -55,7 +62,6 @@ export default function Equipe() {
           </Typography>
         </div>
 
-        {/* Seção da equipe */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {membros.map((membro, index) => (
             <Card key={index} className="max-w-xs mx-auto shadow-lg">
@@ -73,11 +79,20 @@ export default function Equipe() {
                 <Typography color="blue-gray" className="font-normal mb-2">
                   {membro.cargo}
                 </Typography>
-                <Typography color="gray" className="font-normal mb-4">
-                  {membro.descricao}
+                <Typography
+                  color="gray"
+                  className="font-normal mb-4"
+                >
+                  {expandedIndex === index
+                    ? membro.descricao
+                    : `${membro.descricao.substring(0, 96)}...`}
                 </Typography>
-                <Button variant="outlined" fullWidth>
-                  Saiba mais
+                <Button
+                  variant="outlined"
+                  fullWidth
+                  onClick={() => toggleExpand(index)}
+                >
+                  {expandedIndex === index ? 'Mostrar menos' : 'Saiba mais'}
                 </Button>
               </div>
             </Card>

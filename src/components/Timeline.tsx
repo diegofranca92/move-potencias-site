@@ -119,7 +119,7 @@ export function MoveTimeline({ showAll }: MoveTimelineOptions) {
           ? timelineData
           : timelineData.filter((item) => item.destaque)
         ).map((event, index) => (
-          <TimelineItem key={event.year} className="md:h-28 h-auto my-4 group">
+          <TimelineItem key={event.year} className="md:h-28 h-auto my-4 md:m-0 group">
             {index < timelineData.length - 1 && (
               <TimelineConnector className="md:!w-[78px] !w-[108px]" />
             )}
