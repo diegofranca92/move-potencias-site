@@ -8,9 +8,11 @@ import {
 } from '@material-tailwind/react';
 import React, { useState } from 'react';
 
-export function NavBar() {
+export function MainNavBar() {
   const [openNav, setOpenNav] = useState(false);
-  const [isContactVisible, setIsContactVisible] = useState(false);
+  const [visibleContact, setVisibleContact] = useState<{
+    [key: number]: boolean;
+  }>({});
 
   React.useEffect(() => {
     window.addEventListener(
@@ -19,7 +21,6 @@ export function NavBar() {
     );
   }, []);
 
-  // Definir os itens de navegação dinamicamente
   const navItems = [
     { label: 'Inicio', link: '/' },
     { label: 'Equipe', link: '/equipe' },
@@ -27,7 +28,7 @@ export function NavBar() {
     { label: 'Trajetória', link: '/trajetoria' },
     {
       label: 'Contrate',
-      link: 'https://api.whatsapp.com/send?phone=5571982591344',
+      link: '',
       destaque: true,
       showContact: true,
     },
@@ -51,20 +52,28 @@ export function NavBar() {
             onClick={(e) => {
               if (item.showContact) {
                 e.preventDefault();
-                setIsContactVisible(!isContactVisible);
+                setVisibleContact((prevState) => ({
+                  ...prevState,
+                  [index]: !prevState[index], // Alterna o estado de visibilidade para o item clicado
+                }));
               }
             }}
           >
             {item.label}
           </a>
-          {isContactVisible && item.showContact && (
+          {visibleContact[index] && item.showContact && (
             <div className="absolute bg-white text-black p-4 mt-2 rounded-md shadow-md">
               <p className="mb-2 flex justify-between items-center">
                 Telefone: <span className="font-bold">+55 71 8259-1344</span>
                 <IconButton
                   variant="text"
                   className="text-black"
-                  onClick={() => setIsContactVisible(false)}
+                  onClick={() =>
+                    setVisibleContact((prevState) => ({
+                      ...prevState,
+                      [index]: false, // Fecha o contato
+                    }))
+                  }
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +119,7 @@ export function NavBar() {
             <Button
               variant="filled"
               size="sm"
-              className="bg-secondary text-white"
+              className="bg-secondary text-white hidden lg:inline-block"
             >
               <span>Apoie</span>
             </Button>
