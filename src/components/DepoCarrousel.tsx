@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper/types';
 
 type Video = {
   link: string;
@@ -21,12 +22,32 @@ const formatYouTubeLink = (link: string) => {
 };
 
 const DepoCarrousel: React.FC<YouTubeShortsCarouselProps> = ({ videos }) => {
-  const [centerIndex, setCenterIndex] = useState(1); // Índice inicial do slide central
+  const [centerIndex, setCenterIndex] = useState(0); // Índice inicial do slide central
 
-  const handleSlideChange = (swiper: any) => {
-    const visibleSlides = swiper.params.slidesPerView; // Quantidade de slides visíveis
-    const newCenterIndex = swiper.activeIndex + Math.floor(visibleSlides / 2); // Calcula o índice central
-    setCenterIndex(newCenterIndex);
+  const handleSlideChange = (swiper: SwiperType) => {
+    const visibleSlides = Math.floor(swiper.params.slidesPerView as number); // Quantidade de slides visíveis
+    const totalSlides = videos.length;
+
+    // Índice "real" do swiper (considerando o loop virtual)
+    const activeIndex = swiper.realIndex || 0;
+
+    let newCenterIndex;
+
+    if (visibleSlides === 1) {
+      // Para mobile: apenas um slide visível, destaque o slide ativo
+      newCenterIndex = activeIndex;
+    } else {
+      // Para desktop/tablet: calcula o índice central para destacar o item correto
+      newCenterIndex = activeIndex + Math.floor(visibleSlides / 2);
+    }
+
+    // Garantir que o índice central nunca exceda o total de slides
+    const adjustedIndex =
+      newCenterIndex >= totalSlides
+        ? newCenterIndex % totalSlides
+        : newCenterIndex;
+
+    setCenterIndex(adjustedIndex);
   };
 
   return (
@@ -41,16 +62,17 @@ const DepoCarrousel: React.FC<YouTubeShortsCarouselProps> = ({ videos }) => {
         }}
         breakpoints={{
           0: {
-            slidesPerView: 1,
+            slidesPerView: 1, // Apenas 1 slide visível no mobile
           },
           640: {
-            slidesPerView: 2,
+            slidesPerView: 2, // 2 slides visíveis em telas médias
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 3, // 3 slides visíveis em telas grandes
           },
         }}
         onSlideChange={handleSlideChange}
+        loop
         className="rounded-lg"
       >
         {videos.map((video, index) => (
@@ -81,9 +103,7 @@ const DepoCarrousel: React.FC<YouTubeShortsCarouselProps> = ({ videos }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="custom-pagination flex justify-center mt-6 space-x-2">
-        {/* Paginação personalizada */}
-      </div>
+      <div className="custom-pagination flex justify-center mt-6 space-x-2 w-4 h-4"></div>
     </div>
   );
 };
