@@ -109,7 +109,7 @@ export function MainNavBar() {
       <div className="flex items-center justify-between text-blue-gray-900 md:max-w-7xl mx-auto">
         <a
           href="/"
-          className="border-b-2 border-secondary text-center font-bold text-lg"
+          className="border-b-4 border-secondary text-center text-white font-bold text-lg"
         >
           Move Potências da Quebrada
         </a>
