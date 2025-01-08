@@ -4,11 +4,11 @@ const DataCircles = () => {
     { value: "240", description: "Jovens capacitados em oficinas de audiovisual e mídia" },
     { 
       value: "+320", 
-      description: "Mulheres participantes, sendo 80 jovens empreendedoras formadas em oficinas de escrita poética e produção artesanal" 
+      description: "Mulheres, sendo 80 jovens empreendedoras formadas em escrita poética e produção artesanal" 
     },
     { 
       value: "87.6%", 
-      description: "Dos participantes se autodeclaram negros ou pardos, fortalecendo a representatividade da periferia soteropolitana" 
+      description: "Dos participantes se autodeclaram negros ou pardos, fortalecendo a representatividade periférica" 
     },
     { 
       value: "90%", 
