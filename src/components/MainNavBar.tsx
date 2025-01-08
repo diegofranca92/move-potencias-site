@@ -10,11 +10,12 @@ import React, { useState } from 'react';
 
 export function MainNavBar() {
   const [openNav, setOpenNav] = useState(false);
-  const [visibleContact, setVisibleContact] = useState<{
-    [key: number]: boolean;
-  }>({});
+  const [visibleContact, setVisibleContact] = useState<number | null>(null);
+
+  const [currentPath, setCurrentPath] = useState('');
 
   React.useEffect(() => {
+    setCurrentPath(window.location.pathname);
     window.addEventListener(
       'resize',
       () => window.innerWidth >= 960 && setOpenNav(false),
@@ -28,7 +29,6 @@ export function MainNavBar() {
     { label: 'Trajetória', link: '/trajetoria' },
     {
       label: 'Contrate',
-      link: '',
       destaque: true,
       showContact: true,
     },
@@ -42,38 +42,31 @@ export function MainNavBar() {
           key={index}
           variant="small"
           color="white"
-          className="font-normal"
+          className="font-normal relative" // Adicione "relative" ao container
         >
           <a
             href={item.link}
-            className={`flex items-center hover:border-b-2 border-white ${
-              item.destaque ? 'font-bold' : ''
-            }`}
+            className={`flex items-center hover:border-b-2 border-white ${item.link === currentPath ? 'border-b-4 border-secondary' : ''
+              } ${item.destaque ? 'font-bold cursor-pointer' : ''}`}
             onClick={(e) => {
               if (item.showContact) {
                 e.preventDefault();
-                setVisibleContact((prevState) => ({
-                  ...prevState,
-                  [index]: !prevState[index], // Alterna o estado de visibilidade para o item clicado
-                }));
+                setVisibleContact((prevState) =>
+                  prevState === index ? null : index
+                );
               }
             }}
           >
             {item.label}
           </a>
-          {visibleContact[index] && item.showContact && (
-            <div className="absolute bg-white text-black p-4 mt-2 rounded-md shadow-md">
+          {visibleContact === index && item.showContact && (
+            <div className="absolute right-0 bg-white text-black p-4 mt-2 rounded-md shadow-md">
               <p className="mb-2 flex justify-between items-center">
-                Telefone: <span className="font-bold">+55 71 8259-1344</span>
+                Telefone: <span className="font-bold">+55 71 98259-1344</span>
                 <IconButton
                   variant="text"
                   className="text-black"
-                  onClick={() =>
-                    setVisibleContact((prevState) => ({
-                      ...prevState,
-                      [index]: false, // Fecha o contato
-                    }))
-                  }
+                  onClick={() => setVisibleContact(null)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -93,15 +86,14 @@ export function MainNavBar() {
               </p>
               <p className="mb-2">
                 E-mail:{' '}
-                <span className="font-bold">
-                  movepotenciasdaquebrada@gmail.com
-                </span>
+                <span className="font-bold">movepotenciasdaquebrada@gmail.com</span>
               </p>
             </div>
           )}
         </Typography>
       ))}
     </ul>
+
   );
 
   return (
